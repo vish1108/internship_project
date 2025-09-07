@@ -10,7 +10,7 @@ User = get_user_model()
 class TaskAPITestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
-        self.user = User.objects.create_user(email="test@test.com", password="password123")
+        self.user = User.objects.create_user(username="testuser", email="test@test.com", password="password123")
         self.client.force_authenticate(user=self.user)
         self.task = Task.objects.create(
             user=self.user,
